@@ -32,6 +32,7 @@ abstract class Root_Controller extends CI_Controller
     {
         $ajax['status']=true;
         $ajax['system_content'][]=array("id"=>"#system_content","html"=>$this->load->view("login","",true));
+        $ajax['system_content'][]=array("id"=>"#system_menus","html"=>'');
         if($message)
         {
             $ajax['system_message']=$message;
@@ -56,6 +57,7 @@ abstract class Root_Controller extends CI_Controller
         }*/
 
         $ajax['system_content'][]=array("id"=>"#system_content","html"=>$this->load->view("dashboard",$data,true));
+        $ajax['system_content'][]=array("id"=>"#system_menus","html"=>$this->load->view("menu",array(),true));
         if($message)
         {
             $ajax['system_message']=$message;

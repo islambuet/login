@@ -46,13 +46,17 @@ $CI = & get_instance();
         <header class="hidden-print">
 
             <img alt="Logo" height="40" class="site_logo pull-left" src="<?php echo base_url(); ?>images/logo.png">
-            <div class="site_title pull-left">A.R MALIK & Co. (PVT) LTD.</div>
+            <div class="site_title pull-left">A.R. MALIK & Co. (PVT) LTD.</div>
 
         </header>
-        <div class="header_menus">
 
-        </div>
         <div class="container-fluid" style="margin-bottom: 40px;">
+            <div id="system_menus">
+                <?php
+                $CI->load->view('menu');
+                ?>
+            </div>
+
             <div class="row dashboard-wrapper">
                 <div class="col-sm-12" id="system_content">
 

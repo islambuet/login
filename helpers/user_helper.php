@@ -6,7 +6,7 @@ class User_helper
     function __construct($id)
     {
         $CI = & get_instance();
-        $user = $CI->db->get_where($CI->config->item('table_users'), array('user_id' => $id))->row();
+        $user = $CI->db->get_where($CI->config->item('table_user_info'), array('user_id' => $id))->row();
         if ($user)
         {
             foreach ($user as $key => $value)
@@ -18,10 +18,10 @@ class User_helper
     public static function login($username, $password)
     {
         $CI = & get_instance();
-        $user = $CI->db->get_where($CI->config->item('table_users'), array('user_name' => $username, 'user_pass' =>(md5($password))))->row();
+        $user = $CI->db->get_where($CI->config->item('table_user'), array('user_name' => $username, 'password' =>(md5($password)),'status'=>$CI->config->item('system_status_active')))->row();
         if ($user)
         {
-            $CI->session->set_userdata("user_id", $user->user_id);
+            $CI->session->set_userdata("user_id", $user->id);
             return TRUE;
         }
         else
@@ -42,8 +42,14 @@ class User_helper
         {
             if($CI->session->userdata("user_id")!="")
             {
-                User_helper::$logged_user = new User_helper($CI->session->userdata('user_id'));
-                return User_helper::$logged_user;
+                $user = $CI->db->get_where($CI->config->item('table_user_info'), array('user_id' => $CI->session->userdata('user_id')))->row();
+                //$user = $CI->db->get_where($CI->config->item('table_user'), array('id' => $CI->session->userdata('user_id'),'status'=>$CI->config->item('system_status_active')))->row();
+                if($user)
+                {
+                    User_helper::$logged_user = new User_helper($CI->session->userdata('user_id'));
+                    return User_helper::$logged_user;
+                }
+                return null;
             }
             else
             {
