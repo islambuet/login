@@ -78,22 +78,6 @@ class Query_helper
 
     }
 
-    public static  function delete($tablename,$conditions)
-    {
-        /*$CI =& get_instance();
-        foreach($conditions as $condition)
-        {
-            $CI->db->where($condition);
-
-        }
-
-        $CI->db->delete($tablename, $data);
-        return ($CI->db->affected_rows() >0) ? true : false;*/
-
-    }
-
-
-
     public static function get_info($tablename,$fieldnames,$conditions,$limit=0,$start=0)
     {
         $CI =& get_instance();
