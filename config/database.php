@@ -73,10 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'armalik_login';
 $query_builder = TRUE;
 
-$db['armalik_login']['hostname'] = 'localhost';
+$db['armalik_login']['hostname'] = '127.0.0.1';
 $db['armalik_login']['username'] = 'root';
-$db['armalik_login']['password'] = '';
-$db['armalik_login']['database'] = 'armalikg_login';
+$db['armalik_login']['password'] = 'vertrigo';
+$db['armalik_login']['database'] = 'shaiful_arm_login';
 $db['armalik_login']['dbdriver'] = 'mysqli';
 $db['armalik_login']['dbprefix'] = '';
 $db['armalik_login']['pconnect'] = TRUE;

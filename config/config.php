@@ -24,6 +24,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/login/';
+/*if(strpos($_SERVER['HTTP_HOST'],'www')===false)
+{
+    $config['base_url'] = 'http://login.malikseeds.com/';
+}
+else
+{
+    $config['base_url'] = 'http://www.login.malikseeds.com/';
+}*/
 
 /*
 |--------------------------------------------------------------------------
