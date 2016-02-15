@@ -8,7 +8,10 @@ else
 {
     echo 'not found';
 }
+echo '<PRE>';
 print_r($user);
+echo '</PRE>';
+
 ?>
 <div class="row widget">
 

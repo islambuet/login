@@ -12,6 +12,7 @@ class Query_helper
             $id = $CI->db->insert_id();
 
             $historyData = Array(
+                'controller'=>$CI->router->class,
                 'table_id'=>$id,
                 'table_name'=>$tablename,
                 'data'=>json_encode($data),

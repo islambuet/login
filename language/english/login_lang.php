@@ -12,6 +12,9 @@ $lang['ACTION_EDIT'] = 'Edit';
 $lang['ACTION_LOGOUT'] = 'Logout';
 $lang['ACTION_BACK'] = 'Back';
 $lang['ACTION_SAVE'] = 'Save';
+$lang['ACTION_SAVE_NEW'] = 'Save and New';
+$lang['ACTION_DETAILS'] = 'Details';
+$lang['ACTION_REFRESH'] = 'Refresh';
 
 
 //****MODULE TASK//
@@ -20,6 +23,7 @@ $lang['LABEL_PARENT'] = 'Parent';
 $lang['LABEL_CONTROLLER_NAME'] = 'Controller';
 
 $lang['TOTAL_TASK'] = 'Number of Tasks';
+$lang['LABEL_TYPE'] = 'Type';
 //*****//
 
 //common
