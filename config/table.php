@@ -10,4 +10,5 @@ $config['table_system_other_sites'] = 'system_other_sites';
 $config['table_history'] = 'history';
 
 $config['table_setup_offices'] = 'setup_offices';
+$config['table_setup_designation'] = 'setup_designation';
 
