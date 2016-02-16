@@ -16,6 +16,8 @@ $lang['ACTION_SAVE_NEW'] = 'Save and New';
 $lang['ACTION_DETAILS'] = 'Details';
 $lang['ACTION_REFRESH'] = 'Refresh';
 $lang['ACTION_CLEAR'] = 'Clear';
+$lang['ACTION_DELETE'] = 'Delete';
+$lang['DELETE_CONFIRM'] = 'Are You sure to delete?';
 
 
 //****MODULE TASK//
@@ -60,4 +62,9 @@ $lang['LABEL_QUANTITY'] = 'Quantity';
 $lang['LABEL_TOTAL'] = 'Total';
 $lang['LABEL_SEARCH'] = 'Search';
 $lang['LABEL_ADDRESS'] = 'Address';
+//system_other_sites
+$lang['LABEL_SHORT_NAME'] = 'Short Name';
+$lang['LABEL_FULL_NAME'] = 'Full Name';
+$lang['LABEL_SITE_URL'] = 'Site Url';
+$lang['LABEL_SITE_REPLACE_TEXT'] = 'Url Replace text';
 

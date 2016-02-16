@@ -40,7 +40,7 @@
     {
         ?>
         <div class="action_button">
-            <button id="button_action_delete" class="btn button_action_batch" data-action-link="<?php echo $action_delete; ?>"><?php echo $CI->lang->line("ACTION_DELETE"); ?></button>
+            <button id="button_action_delete" class="btn" data-action-link="<?php echo $action_delete; ?>"><?php echo $CI->lang->line("ACTION_DELETE"); ?></button>
         </div>
     <?php
     }
