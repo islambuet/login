@@ -95,15 +95,5 @@
     <?php
     }
     ?>
-    <?php
-    if(isset($action_details))
-    {
-        ?>
-        <div class="action_button">
-            <a class="btn" href="<?php echo $action_details; ?>"><?php echo $CI->lang->line("ACTION_DETAILS"); ?></a>
-        </div>
-    <?php
-    }
-    ?>
 </div>
 <div class="clearfix"></div>

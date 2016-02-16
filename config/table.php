@@ -8,3 +8,5 @@ $config['table_system_task'] = 'system_task';
 $config['table_system_user_group_role'] = 'system_user_group_role';
 $config['table_history'] = 'history';
 
+$config['table_setup_offices'] = 'setup_offices';
+

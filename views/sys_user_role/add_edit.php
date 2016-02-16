@@ -62,7 +62,7 @@ $CI->load->view("action_buttons",$action_data);
                                 if($module_task['module_task']['type']=='TASK')
                                 {
                                     ?>
-                                    <input type="checkbox" title="add" class="task_action_<?php echo $module_task['module_task']['id'];?>"  <?php if(in_array($module_task['module_task']['id'],$role_status['view'])){echo 'checked';}?> value="1" name='tasks[<?php echo $module_task['module_task']['id'];?>][add]'>
+                                    <input type="checkbox" title="add" class="task_action_<?php echo $module_task['module_task']['id'];?>"  <?php if(in_array($module_task['module_task']['id'],$role_status['add'])){echo 'checked';}?> value="1" name='tasks[<?php echo $module_task['module_task']['id'];?>][add]'>
                                     <?php
                                 }
                                 ?>
@@ -72,7 +72,7 @@ $CI->load->view("action_buttons",$action_data);
                                 if($module_task['module_task']['type']=='TASK')
                                 {
                                     ?>
-                                    <input type="checkbox" title="edit" class="task_action_<?php echo $module_task['module_task']['id'];?>"  <?php if(in_array($module_task['module_task']['id'],$role_status['view'])){echo 'checked';}?> value="1" name='tasks[<?php echo $module_task['module_task']['id'];?>][edit]'>
+                                    <input type="checkbox" title="edit" class="task_action_<?php echo $module_task['module_task']['id'];?>"  <?php if(in_array($module_task['module_task']['id'],$role_status['edit'])){echo 'checked';}?> value="1" name='tasks[<?php echo $module_task['module_task']['id'];?>][edit]'>
                                     <?php
                                 }
                                 ?>
@@ -82,7 +82,7 @@ $CI->load->view("action_buttons",$action_data);
                                 if($module_task['module_task']['type']=='TASK')
                                 {
                                     ?>
-                                    <input type="checkbox" title="delete" class="task_action_<?php echo $module_task['module_task']['id'];?>"  <?php if(in_array($module_task['module_task']['id'],$role_status['view'])){echo 'checked';}?> value="1" name='tasks[<?php echo $module_task['module_task']['id'];?>][delete]'>
+                                    <input type="checkbox" title="delete" class="task_action_<?php echo $module_task['module_task']['id'];?>"  <?php if(in_array($module_task['module_task']['id'],$role_status['delete'])){echo 'checked';}?> value="1" name='tasks[<?php echo $module_task['module_task']['id'];?>][delete]'>
                                     <?php
                                 }
                                 ?>
