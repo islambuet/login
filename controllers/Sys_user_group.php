@@ -54,6 +54,7 @@ class Sys_user_group extends Root_Controller
         }
         else
         {
+            $ajax['status']=false;
             $ajax['system_message']=$this->lang->line("YOU_DONT_HAVE_ACCESS");
             $this->jsonReturn($ajax);
         }

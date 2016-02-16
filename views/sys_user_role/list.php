@@ -1,16 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-    $CI = & get_instance();
-    $action_data=array();
-    if(isset($CI->permissions['add'])&&($CI->permissions['add']==1))
-    {
-        $action_data["action_new"]=base_url($CI->controller_url."/index/add");
-    }
-    if(isset($CI->permissions['edit'])&&($CI->permissions['edit']==1))
-    {
-        $action_data["action_edit"]=base_url($CI->controller_url."/index/edit");
-    }
-    $action_data["action_refresh"]=base_url($CI->controller_url."/index/list");
-    $CI->load->view("action_buttons",$action_data);
+$CI = & get_instance();
+$action_data=array();
+if(isset($CI->permissions['edit'])&&($CI->permissions['edit']==1))
+{
+    $action_data["action_edit"]=base_url($CI->controller_url."/index/edit");
+}
+$action_data["action_refresh"]=base_url($CI->controller_url."/index/list");
+$CI->load->view("action_buttons",$action_data);
 ?>
 
 <div class="row widget">
@@ -38,8 +34,7 @@
             dataFields: [
                 { name: 'id', type: 'int' },
                 { name: 'name', type: 'string' },
-                { name: 'ordering', type: 'int' },
-                { name: 'status', type: 'string' }
+                { name: 'total_task', type: 'int' }
             ],
             id: 'id',
             url: url
@@ -63,8 +58,8 @@
                 autoheight: true,
                 columns: [
                     { text: '<?php echo $CI->lang->line('LABEL_NAME'); ?>', dataField: 'name'},
-                    { text: '<?php echo $CI->lang->line('LABEL_ORDER'); ?>', dataField: 'ordering',width:'150',cellsalign: 'right'},
-                    { text: '<?php echo $CI->lang->line('STATUS'); ?>', dataField: 'status',filtertype: 'list',width:'150',cellsalign: 'right'}
+                    { text: '<?php echo $CI->lang->line('TOTAL_TASK'); ?>', dataField: 'total_task',width:'150',cellsalign: 'right'}
+
                 ]
             });
     });

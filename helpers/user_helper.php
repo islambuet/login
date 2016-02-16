@@ -160,6 +160,7 @@ class User_helper
         $CI->db->join($CI->config->item('table_system_task').' task','task.id = ugr.task_id','INNER');
         $CI->db->like("controller",$controller_name,"after");
         $CI->db->where("user_group_id",$user->user_group);
+        $CI->db->where("revision",1);
         $result=$CI->db->get()->row_array();
         return $result;
     }

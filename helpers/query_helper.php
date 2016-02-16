@@ -57,6 +57,7 @@ class Query_helper
             {
 
                 $historyData = Array(
+                    'controller'=>$CI->router->class,
                     'table_id'=>$row['id'],
                     'table_name'=>$tablename,
                     'data'=>json_encode($data),
