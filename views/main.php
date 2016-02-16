@@ -10,6 +10,10 @@ $CI = & get_instance();
         <meta charset="utf-8">
         <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url();?>css/style.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery-ui/jquery-ui.theme.css">
+
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/css/jqx/jqx.base.css">
 
     </head>
     <body>
@@ -42,6 +46,7 @@ $CI = & get_instance();
             var base_url = "<?php echo base_url(); ?>";
             var display_date_format = "dd-M-yy";
             var SELCET_ONE_ITEM = "<?php echo $CI->lang->line('SELECT_ONE_ITEM'); ?>";
+            var DELETE_CONFIRM = "<?php echo $CI->lang->line('DELETE_CONFIRM'); ?>";
         </script>
         <header class="hidden-print">
 

@@ -4,6 +4,7 @@
     $action_data["action_back"]=base_url($CI->controller_url);
     $action_data["action_save"]='#save_form';
     $action_data["action_save_new"]='#save_form';
+    $action_data["action_clear"]='#save_form';
     $CI->load->view("action_buttons",$action_data);
 ?>
 <form class="form_valid" id="save_form" action="<?php echo site_url($CI->controller_url.'/index/save');?>" method="post">

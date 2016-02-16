@@ -4,8 +4,8 @@
     if(isset($CI->permissions['add'])&&($CI->permissions['add']==1))
     {
         $action_data["action_new"]=base_url($CI->controller_url."/index/add");
-        $action_data["action_refresh"]=base_url($CI->controller_url."/index/list");
     }
+    $action_data["action_refresh"]=base_url($CI->controller_url."/index/list");
     $CI->load->view("action_buttons",$action_data);
 ?>
 

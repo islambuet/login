@@ -15,6 +15,7 @@ $lang['ACTION_SAVE'] = 'Save';
 $lang['ACTION_SAVE_NEW'] = 'Save and New';
 $lang['ACTION_DETAILS'] = 'Details';
 $lang['ACTION_REFRESH'] = 'Refresh';
+$lang['ACTION_CLEAR'] = 'Clear';
 
 
 //****MODULE TASK//

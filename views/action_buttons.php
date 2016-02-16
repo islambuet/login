@@ -80,7 +80,7 @@
     {
         ?>
         <div class="action_button">
-            <button id="button_action_clear" class="btn" data-form="<?php echo $action_clear; ?>"><?php echo $CI->lang->line("ACTION_SAVE_NEW"); ?></button>
+            <button id="button_action_clear" class="btn" data-form="<?php echo $action_clear; ?>"><?php echo $CI->lang->line("ACTION_CLEAR"); ?></button>
         </div>
     <?php
     }
