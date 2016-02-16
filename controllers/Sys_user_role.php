@@ -78,7 +78,7 @@ class Sys_user_role extends Root_Controller
             $this->load->model("sys_module_task_model");
 
             $data['modules_tasks']=$this->sys_module_task_model->get_modules_tasks_table_tree();
-            //$data['role_status']=$this->sys_user_role_model->get_role_status($id);
+            $data['role_status']=$this->sys_user_role_model->get_role_status($group_id);
             $data['title']="Edit User Role";
             $data['group_id']=$group_id;
             $ajax['status']=true;
