@@ -62,7 +62,9 @@ class User_helper
     {
         $user=User_helper::get_user();
         $CI = & get_instance();
-        $tasks=Query_helper::get_info($CI->config->item('table_system_task'),'*',array());
+        $CI->db->order_by('ordering');
+        $tasks=$CI->db->get($CI->config->item('table_system_task'))->result_array();
+
         $roles=Query_helper::get_info($CI->config->item('table_system_user_group_role'),'*',array('revision =1','view =1','user_group_id ='.$user->user_group));
         $role_data=array();
         foreach($roles as $role)
