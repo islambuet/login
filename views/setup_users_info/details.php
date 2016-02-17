@@ -121,7 +121,7 @@ $CI->load->view("action_buttons",$action_data);
                 </div>
                 <div class="row show-grid">
                     <div class="col-xs-4">
-                        <label class="control-label pull-right"><?php echo $CI->lang->line('LABEL_USER_GROUP');?><span style="color:#FF0000">*</span></label>
+                        <label class="control-label pull-right"><?php echo $CI->lang->line('LABEL_USER_GROUP');?></label>
                     </div>
                     <div class="col-sm-4 col-xs-8">
                         <?php
