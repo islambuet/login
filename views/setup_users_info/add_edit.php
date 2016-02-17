@@ -396,7 +396,7 @@
     {
         turn_off_triggers();
         $(".datepicker").datepicker({dateFormat : display_date_format});
-        $(".dob").datepicker({dateFormat : display_date_format,changeMonth: true,changeYear: true});
+        $(".dob").datepicker({dateFormat : display_date_format,changeMonth: true,changeYear: true,yearRange: "-50:+0"});
         $(":file").filestyle({input: false,buttonText: "<?php echo $CI->lang->line('UPLOAD');?>", buttonName: "btn-danger"});
 
     });

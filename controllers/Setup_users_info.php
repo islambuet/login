@@ -328,13 +328,18 @@ class Setup_users_info extends Root_Controller
     }
     public function get_items()
     {
+        $user = User_helper::get_user();
 
         $this->db->from($this->config->item('table_setup_user').' user');
         $this->db->select('user.id,user.employee_id,user.user_name,user.status');
         $this->db->select('user_info.name,user_info.ordering');
         $this->db->join($this->config->item('table_setup_user_info').' user_info','user.id = user_info.user_id','INNER');
         $this->db->where('user_info.revision',1);
-        $this->db->where('user_info.user_group !=',1);
+        if($user->user_group!=1)
+        {
+            $this->db->where('user_info.user_group !=',1);
+        }
+
         $items=$this->db->get()->result_array();
 
 
