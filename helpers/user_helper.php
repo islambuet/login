@@ -6,7 +6,7 @@ class User_helper
     function __construct($id)
     {
         $CI = & get_instance();
-        $user = $CI->db->get_where($CI->config->item('table_setup_user_info'), array('user_id' => $id))->row();
+        $user = $CI->db->get_where($CI->config->item('table_setup_user_info'), array('user_id' => $id,'revision'=>1))->row();
         if ($user)
         {
             foreach ($user as $key => $value)
