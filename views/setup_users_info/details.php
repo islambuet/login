@@ -341,7 +341,7 @@ $CI->load->view("action_buttons",$action_data);
 
     jQuery(document).ready(function()
     {
-        turn_off_triggers();        
+        turn_off_triggers();
 
     });
 </script>

@@ -93,6 +93,7 @@ $lang['LABEL_CONTACT_PERSON'] = 'Contact Person';
 $lang['LABEL_CONTACT_NO'] = 'Contact Number';
 $lang['LABEL_PROFILE_PICTURE'] = 'Profile Picture';
 $lang['LABEL_PASSWORD'] = 'Password';
+$lang['LABEL_OLD_PASSWORD'] = 'Old Password';
 $lang['LABEL_RE_PASSWORD'] = 'Re-type Password';
 
 
