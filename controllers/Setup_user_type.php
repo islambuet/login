@@ -142,7 +142,7 @@ class Setup_user_type extends Root_Controller
             $data['user_type']=Query_helper::get_info($this->config->item('table_setup_user_type'),'*',array('id ='.$office_id),1);
             $data['title']="Details of User Type (".$data['user_type']['name'].')';
             $ajax['status']=true;
-            $ajax['system_content'][]=array("id"=>"#system_content","html"=>$this->load->view("setup_offices/details",$data,true));
+            $ajax['system_content'][]=array("id"=>"#system_content","html"=>$this->load->view("setup_user_type/details",$data,true));
             if($this->message)
             {
                 $ajax['system_message']=$this->message;

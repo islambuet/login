@@ -67,4 +67,30 @@ $lang['LABEL_SHORT_NAME'] = 'Short Name';
 $lang['LABEL_FULL_NAME'] = 'Full Name';
 $lang['LABEL_SITE_URL'] = 'Site Url';
 $lang['LABEL_SITE_REPLACE_TEXT'] = 'Url Replace text';
+//users
+$lang['LABEL_EMPLOYEE_ID'] = 'Employee id';
+$lang['LABEL_USERNAME'] = 'User name';
+$lang['LABEL_OFFICE_NAME'] = 'Office';
+$lang['LABEL_DESIGNATION_NAME'] = 'Designation';
+$lang['LABEL_USER_TYPE'] = 'User Type';
+$lang['LABEL_USER_GROUP'] = 'User Group';
+$lang['LABEL_FATHER_NAME'] = 'Father Name';
+$lang['LABEL_MOTHER_NAME'] = 'Mother Name';
+$lang['LABEL_DATE_BIRTH'] = 'Date of Birth';
+$lang['LABEL_DATE_JOIN'] = 'Date of Joining';
+$lang['LABEL_GENDER'] = 'Gender';
+$lang['LABEL_MARITAL_STATUS'] = 'Marital Status';
+$lang['LABEL_SPOUSE_NAME'] = 'Spouse Name';
+$lang['LABEL_NID'] = 'NID Number';
+$lang['LABEL_ADDRESS_PRESENT'] = 'Present Address';
+$lang['LABEL_ADDRESS_PERMANENT'] = 'Permanent Address';
+$lang['LABEL_SALARY_BASIC'] = 'Basic Salary';
+$lang['LABEL_SALARY_OTHER'] = 'Other Allowance';
+$lang['LABEL_BLOOD_GROUP'] = 'Blood Group';
+$lang['LABEL_MOBILE_NO'] = 'Mobile Number';
+$lang['LABEL_TEL_NO'] = 'Land Line Number';
+$lang['LABEL_CONTACT_PERSON'] = 'Contact Person';
+$lang['LABEL_CONTACT_NO'] = 'Contact Number';
+$lang['LABEL_PROFILE_PICTURE'] = 'Profile Picture';
+
 
