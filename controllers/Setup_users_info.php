@@ -296,7 +296,7 @@ class Setup_users_info extends Root_Controller
             else
             {
                 $ajax['status']=false;
-                $ajax['desk_message']=$this->lang->line("MSG_SAVED_FAIL");
+                $ajax['system_message']=$this->lang->line("MSG_SAVED_FAIL");
                 $this->jsonReturn($ajax);
             }
         }
