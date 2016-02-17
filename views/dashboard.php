@@ -1,19 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 $user=User_helper::get_user();
-if($user)
-{
-    echo 'found';
-}
-else
-{
-    echo 'not found';
-}
-echo '<PRE>';
-print_r($user);
-echo '</PRE>';
-
 ?>
 <div class="row widget">
+    <div class="col-sm-12 text-center">
+        <h1>WelCome <?php echo $user->name;?></h1>
+        <img style="max-width: 250px;" src="<?php echo $user->picture_profile; ?>">
+    </div>
 
 
 
