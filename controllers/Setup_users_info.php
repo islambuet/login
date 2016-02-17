@@ -337,6 +337,7 @@ class Setup_users_info extends Root_Controller
         $this->db->join($this->config->item('table_setup_user_info').' user_info','user.id = user_info.user_id','INNER');
         $this->db->join($this->config->item('table_system_user_group').' ug','ug.id = user_info.user_group','LEFT');
         $this->db->where('user_info.revision',1);
+        $this->db->order_by('user_info.ordering','ASC');
         if($user->user_group!=1)
         {
             $this->db->where('user_info.user_group !=',1);

@@ -150,6 +150,7 @@ class Setup_users_active_inactive extends Root_Controller
         $this->db->select('user_info.name,user_info.ordering');
         $this->db->join($this->config->item('table_setup_user_info').' user_info','user.id = user_info.user_id','INNER');
         $this->db->where('user_info.revision',1);
+        $this->db->order_by('user_info.ordering','ASC');
         if($user->user_group!=1)
         {
             $this->db->where('user_info.user_group !=',1);
