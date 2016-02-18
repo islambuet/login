@@ -13,4 +13,5 @@ $config['table_setup_user_info'] = 'setup_user_info';
 $config['table_setup_offices'] = 'setup_offices';
 $config['table_setup_designation'] = 'setup_designation';
 $config['table_setup_user_type'] = 'setup_user_type';
+$config['table_setup_users_other_sites'] = 'setup_users_other_sites';
 

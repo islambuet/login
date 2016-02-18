@@ -96,5 +96,7 @@ $lang['LABEL_PASSWORD'] = 'Password';
 $lang['LABEL_OLD_PASSWORD'] = 'Old Password';
 $lang['LABEL_RE_PASSWORD'] = 'Re-type Password';
 $lang['MSG_NO_FILE_UPLOADED'] = 'No file uploaded';
+$lang['LABEL_OTHER_SITES'] = 'Other Sites';
+
 
 
