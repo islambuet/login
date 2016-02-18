@@ -42,7 +42,7 @@ class User_helper
         {
             if($CI->session->userdata("user_id")!="")
             {
-                $user = $CI->db->get_where($CI->config->item('table_setup_user_info'), array('user_id' => $CI->session->userdata('user_id')))->row();
+                $user = $CI->db->get_where($CI->config->item('table_setup_user'), array('id' => $CI->session->userdata('user_id'),'status'=>$CI->config->item('system_status_active')))->row();
                 //$user = $CI->db->get_where($CI->config->item('table_user'), array('id' => $CI->session->userdata('user_id'),'status'=>$CI->config->item('system_status_active')))->row();
                 if($user)
                 {
