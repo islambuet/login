@@ -6,7 +6,7 @@ $sites=User_helper::get_accessed_sites();
 <div class="row widget">
     <div style="" class="row show-grid">
         <div class="col-sm-12 text-center">
-            <h1>WelCome <?php echo $user->name;?></h1>
+            <h1><?php echo $user->name;?></h1>
             <img style="max-width: 250px;" src="<?php echo $user->picture_profile; ?>">
         </div>
     </div>
