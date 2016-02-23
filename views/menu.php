@@ -57,9 +57,14 @@ if($user)
 
     jQuery(document).ready(function()
     {
-        $( ".dropdown-submenu" ).click(function(event) {
+        $( ".dropdown-submenu" ).click(function(event)
+        {
+            var target = $( event.target );
             // stop bootstrap.js to hide the parents
-            event.stopPropagation();
+            if(target.attr('class')=='dropdown-toggle')
+            {
+                event.stopPropagation();
+            }
             // hide the open children
             $( this ).find(".dropdown-submenu").removeClass('open');
             // add 'open' class to all parents with class 'dropdown-submenu'
