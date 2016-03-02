@@ -332,7 +332,7 @@ class Setup_users_info extends Root_Controller
 
         $this->db->from($this->config->item('table_setup_user').' user');
         $this->db->select('user.id,user.employee_id,user.user_name,user.status');
-        $this->db->select('user_info.name,user_info.ordering');
+        $this->db->select('user_info.name,user_info.ordering,user_info.blood_group');
         $this->db->select('ug.name group_name');
         $this->db->join($this->config->item('table_setup_user_info').' user_info','user.id = user_info.user_id','INNER');
         $this->db->join($this->config->item('table_system_user_group').' ug','ug.id = user_info.user_group','LEFT');

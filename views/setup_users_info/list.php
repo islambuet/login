@@ -45,6 +45,7 @@
                 { name: 'user_name', type: 'string' },
                 { name: 'group_name', type: 'string' },
                 { name: 'name', type: 'string' },
+                { name: 'blood_group', type: 'string' },
                 { name: 'ordering', type: 'int' },
                 { name: 'status', type: 'string' }
             ],
@@ -72,6 +73,7 @@
                     { text: '<?php echo $CI->lang->line('LABEL_EMPLOYEE_ID'); ?>', dataField: 'employee_id'},
                     { text: '<?php echo $CI->lang->line('LABEL_USERNAME'); ?>', dataField: 'user_name'},
                     { text: '<?php echo $CI->lang->line('LABEL_NAME'); ?>', dataField: 'name'},
+                    { text: '<?php echo $CI->lang->line('LABEL_BLOOD_GROUP'); ?>', dataField: 'blood_group',filtertype: 'list'},
                     { text: '<?php echo $CI->lang->line('LABEL_USER_GROUP'); ?>', dataField: 'group_name',filtertype: 'list'},
                     { text: '<?php echo $CI->lang->line('LABEL_ORDER'); ?>', dataField: 'ordering',width:'100',cellsalign: 'right'},
                     { text: '<?php echo $CI->lang->line('STATUS'); ?>', dataField: 'status',filtertype: 'list',width:'150',cellsalign: 'right'}
