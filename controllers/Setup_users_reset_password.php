@@ -154,7 +154,9 @@ class Setup_users_reset_password extends Root_Controller
         $this->db->from($this->config->item('table_setup_user').' user');
         $this->db->select('user.id,user.employee_id,user.user_name,user.status');
         $this->db->select('user_info.name,user_info.ordering');
+        $this->db->select('designation.name designation_name');
         $this->db->join($this->config->item('table_setup_user_info').' user_info','user.id = user_info.user_id','INNER');
+        $this->db->join($this->config->item('table_setup_designation').' designation','designation.id = user_info.designation','LEFT');
         $this->db->where('user_info.revision',1);
         $this->db->order_by('user_info.ordering','ASC');
         if($user->user_group!=1)
