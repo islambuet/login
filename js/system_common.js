@@ -111,7 +111,11 @@ $(document).ready(function()
     //bind any anchor tag to ajax request
     $(document).on("click", "a", function(event)
     {
-
+        if(($(this).attr('href')=='#')||($(this).attr('href')==''))
+        {
+            event.preventDefault();
+            return;
+        }
         if(($(this).is('[class*="jqx"]'))||($(this).is('[class*="dropdown"]'))||($(this).is('[class*="external"]'))||($(this).is('[class*="ui-corner-all"]')))
         {
             return;

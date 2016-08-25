@@ -24,7 +24,7 @@ $CI->load->view("action_buttons",$action_data);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    <a class="accordion-toggle external" data-toggle="collapse" data-target="#collapse1" href="#">
                         Credentials</a>
                 </h4>
             </div>
@@ -58,7 +58,7 @@ $CI->load->view("action_buttons",$action_data);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    <a class="external" data-toggle="collapse" data-target="#collapse2" href="#">
                         Employee Type, Designation and Office</a>
                 </h4>
             </div>
@@ -103,6 +103,24 @@ $CI->load->view("action_buttons",$action_data);
                 </div>
                 <div class="row show-grid">
                     <div class="col-xs-4">
+                        <label class="control-label pull-right"><?php echo $CI->lang->line('LABEL_DEPARTMENT_NAME');?></label>
+                    </div>
+                    <div class="col-sm-4 col-xs-8">
+                        <?php
+                        $department_name='';
+                        foreach($departments as $department)
+                        {
+                            if($department['value']==$user_info['department_id'])
+                            {
+                                $department_name=$department['text'];
+                            }
+                        }
+                        ?>
+                        <label class="control-label"><?php echo $department_name;;?></label>
+                    </div>
+                </div>
+                <div class="row show-grid">
+                    <div class="col-xs-4">
                         <label class="control-label pull-right"><?php echo $CI->lang->line('LABEL_USER_TYPE');?></label>
                     </div>
                     <div class="col-sm-4 col-xs-8">
@@ -142,7 +160,7 @@ $CI->load->view("action_buttons",$action_data);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                    <a class="external" data-toggle="collapse" data-target="#collapse3" href="#">
                         Employee Personal Information</a>
                 </h4>
             </div>
@@ -216,7 +234,7 @@ $CI->load->view("action_buttons",$action_data);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                    <a class="external" data-toggle="collapse" data-target="#collapse4" href="#">
                         Address</a>
                 </h4>
             </div>
@@ -242,7 +260,7 @@ $CI->load->view("action_buttons",$action_data);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                    <a class="external" data-toggle="collapse" data-target="#collapse5" href="#">
                         Join and Salary Info</a>
                 </h4>
             </div>
@@ -276,7 +294,7 @@ $CI->load->view("action_buttons",$action_data);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                    <a class="external" data-toggle="collapse" data-target="#collapse6" href="#">
                         Contact Info</a>
                 </h4>
             </div>

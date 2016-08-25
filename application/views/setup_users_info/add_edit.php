@@ -22,7 +22,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            <a class="accordion-toggle external" data-toggle="collapse" data-target="#collapse1" href="#">
                                 Credentials</a>
                         </h4>
                     </div>
@@ -74,7 +74,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            <a class="external" data-toggle="collapse" data-target="#collapse2" href="#">
                                 Employee Type, Designation and Office</a>
                         </h4>
                     </div>
@@ -108,6 +108,23 @@
                                     foreach($designations as $designation)
                                     {?>
                                         <option value="<?php echo $designation['value']?>" <?php if($designation['value']==$user_info['designation']){ echo "selected";}?>><?php echo $designation['text'];?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row show-grid">
+                            <div class="col-xs-4">
+                                <label class="control-label pull-right"><?php echo $CI->lang->line('LABEL_DEPARTMENT_NAME');?></label>
+                            </div>
+                            <div class="col-sm-4 col-xs-8">
+                                <select id="designation" name="user_info[department_id]" class="form-control">
+                                    <option value=""><?php echo $this->lang->line('SELECT');?></option>
+                                    <?php
+                                    foreach($departments as $department)
+                                    {?>
+                                        <option value="<?php echo $department['value']?>" <?php if($department['value']==$user_info['department_id']){ echo "selected";}?>><?php echo $department['text'];?></option>
                                     <?php
                                     }
                                     ?>
@@ -153,7 +170,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            <a class="external" data-toggle="collapse" data-target="#collapse3" href="#">
                                 Employee Personal Information</a>
                         </h4>
                     </div>
@@ -237,7 +254,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                            <a class="external" data-toggle="collapse" data-target="#collapse4" href="#">
                                 Address</a>
                         </h4>
                     </div>
@@ -263,7 +280,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                            <a class="external" data-toggle="collapse" data-target="#collapse5" href="#">
                                 Join and Salary Info</a>
                         </h4>
                     </div>
@@ -297,7 +314,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                            <a class="external" data-toggle="collapse" data-target="#collapse6" href="#">
                                 Contact Info</a>
                         </h4>
                     </div>
@@ -357,7 +374,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="external" data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                            <a class="external" data-toggle="collapse" data-target="#collapse7" href="#">
                                 Profile Picture</a>
                         </h4>
                     </div>

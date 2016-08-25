@@ -81,6 +81,7 @@ class Setup_users_info extends Root_Controller
                 'name' => '',
                 'office_id' => '',
                 'designation' => '',
+                'department_id' => '',
                 'user_type_id' => '',
                 'user_group' => '',
                 'father_name' => '',
@@ -101,10 +102,11 @@ class Setup_users_info extends Root_Controller
                 'contact_person' => '',
                 'contact_no' => '',
                 'picture_profile' => base_url().'images/no_image.jpg',
-                'ordering' => 99
+                'ordering' => 999
             );
             $data['offices']=Query_helper::get_info($this->config->item('table_setup_offices'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['designations']=Query_helper::get_info($this->config->item('table_setup_designation'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
+            $data['departments']=Query_helper::get_info($this->config->item('table_setup_department'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['user_types']=Query_helper::get_info($this->config->item('table_setup_user_type'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['user_groups']=Query_helper::get_info($this->config->item('table_system_user_group'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"','id !=1'));
             $ajax['system_page_url']=site_url($this->controller_url."/index/add");
@@ -143,6 +145,7 @@ class Setup_users_info extends Root_Controller
 
             $data['offices']=Query_helper::get_info($this->config->item('table_setup_offices'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['designations']=Query_helper::get_info($this->config->item('table_setup_designation'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
+            $data['departments']=Query_helper::get_info($this->config->item('table_setup_department'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['user_types']=Query_helper::get_info($this->config->item('table_setup_user_type'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['user_groups']=Query_helper::get_info($this->config->item('table_system_user_group'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"','id !=1'));
 
@@ -181,6 +184,7 @@ class Setup_users_info extends Root_Controller
 
             $data['offices']=Query_helper::get_info($this->config->item('table_setup_offices'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['designations']=Query_helper::get_info($this->config->item('table_setup_designation'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
+            $data['departments']=Query_helper::get_info($this->config->item('table_setup_department'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['user_types']=Query_helper::get_info($this->config->item('table_setup_user_type'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"'));
             $data['user_groups']=Query_helper::get_info($this->config->item('table_system_user_group'),array('id value','name text'),array('status ="'.$this->config->item('system_status_active').'"','id !=1'));
 
@@ -310,7 +314,12 @@ class Setup_users_info extends Root_Controller
         {
             $this->form_validation->set_rules('user[user_name]',$this->lang->line('LABEL_USERNAME'),'required');
             $user_user=$this->input->post("user");
-            $exists=Query_helper::get_info($this->config->item('table_setup_user'),array('user_name'),array('user_name ='.$user_user['user_name']),1);
+            if(sizeof(explode(' ',$user_user['user_name']))>1)
+            {
+                $this->message="Invalid User name.<br>User name should be one word.<br>Please avoid space.";
+                return false;
+            }
+            $exists=Query_helper::get_info($this->config->item('table_setup_user'),array('user_name'),array('user_name ="'.$user_user['user_name'].'"'),1);
             if($exists)
             {
                 $this->message="User Name already Exists";
@@ -335,9 +344,11 @@ class Setup_users_info extends Root_Controller
         $this->db->select('user_info.name,user_info.ordering,user_info.blood_group,user_info.mobile_no');
         $this->db->select('ug.name group_name');
         $this->db->select('designation.name designation_name');
+        $this->db->select('department.name department_name');
         $this->db->join($this->config->item('table_setup_user_info').' user_info','user.id = user_info.user_id','INNER');
         $this->db->join($this->config->item('table_system_user_group').' ug','ug.id = user_info.user_group','LEFT');
         $this->db->join($this->config->item('table_setup_designation').' designation','designation.id = user_info.designation','LEFT');
+        $this->db->join($this->config->item('table_setup_department').' department','department.id = user_info.department_id','LEFT');
         $this->db->where('user_info.revision',1);
         $this->db->order_by('user_info.ordering','ASC');
         if($user->user_group!=1)
