@@ -27,6 +27,7 @@ $lang['LABEL_CONTROLLER_NAME'] = 'Controller';
 
 $lang['TOTAL_TASK'] = 'Number of Tasks';
 $lang['LABEL_TYPE'] = 'Type';
+$lang['MSG_ROLE_ASSIGN_SUCCESS'] = 'Role Assign Successful.';
 //*****//
 
 //common
