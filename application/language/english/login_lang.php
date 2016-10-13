@@ -74,6 +74,7 @@ $lang['LABEL_USERNAME'] = 'User name';
 $lang['LABEL_OFFICE_NAME'] = 'Office';
 $lang['LABEL_DESIGNATION_NAME'] = 'Designation';
 $lang['LABEL_DEPARTMENT_NAME'] = 'Department';
+$lang['LABEL_COMPANY_NAME'] = 'Company';
 $lang['LABEL_USER_TYPE'] = 'User Type';
 $lang['LABEL_USER_GROUP'] = 'User Group';
 $lang['LABEL_FATHER_NAME'] = 'Father Name';
