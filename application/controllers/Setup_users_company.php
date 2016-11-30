@@ -135,7 +135,13 @@ class Setup_users_company extends Root_Controller
             $data['title']="Assign Company for ".$data['user_info']['name'];
 
             $data['companies']=Query_helper::get_info($this->config->item('table_setup_company'),'*',array('status ="'.$this->config->item('system_status_active').'"'),0,0,array('ordering'));
-            $data['assigned_companies']=Query_helper::get_info($this->config->item('table_setup_users_company'),'*',array('user_id ='.$user_id,'revision =1'));
+            $assigned_companies=Query_helper::get_info($this->config->item('table_setup_users_company'),array('company_id'),array('user_id ='.$user_id,'revision =1'));
+            $data['assigned_companies']=array();
+            foreach($assigned_companies as $row)
+            {
+                $data['assigned_companies'][]=$row['company_id'];
+            }
+
 
 
             $ajax['status']=true;
@@ -172,7 +178,12 @@ class Setup_users_company extends Root_Controller
             $data['title']="Assigned Company for ".$data['user_info']['name'];
 
             $data['companies']=Query_helper::get_info($this->config->item('table_setup_company'),'*',array('status ="'.$this->config->item('system_status_active').'"'),0,0,array('ordering'));
-            $data['assigned_companies']=Query_helper::get_info($this->config->item('table_setup_users_company'),'*',array('user_id ='.$user_id,'revision =1'));
+            $assigned_companies=Query_helper::get_info($this->config->item('table_setup_users_company'),array('company_id'),array('user_id ='.$user_id,'revision =1'));
+            $data['assigned_companies']=array();
+            foreach($assigned_companies as $row)
+            {
+                $data['assigned_companies'][]=$row['company_id'];
+            }
 
 
             $ajax['status']=true;
