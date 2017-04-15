@@ -77,6 +77,6 @@ $CI = & get_instance();
         </footer>
         <div id="system_loading"><img src="<?php echo base_url(); ?>images/spinner.gif"></div>
         <div id="system_message"></div>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js/system_common.js"></script>
+        <script type="text/javascript" src="<?php echo base_url('js/system_common.js?version='.time()); ?>"></script>
     </body>
 </html>
