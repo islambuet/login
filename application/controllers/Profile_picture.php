@@ -82,31 +82,40 @@ class Profile_picture extends Root_Controller
             $uploaded_image = System_helper::upload_file("images/profiles/".$user_id);
             if(array_key_exists('image_profile',$uploaded_image))
             {
-                $data_user_info=Query_helper::get_info($this->config->item('table_setup_user_info'),array('*'),array('user_id ='.$user_id,'revision =1'),1);
-                unset($data_user_info['id']);
-                $data_user_info['user_created'] = $user->user_id;
-                $data_user_info['date_created'] = $time;
-                $data_user_info['revision'] = 1;
-                $data_user_info['picture_profile']=base_url()."images/profiles/".$user_id.'/'.$uploaded_image['image_profile']['info']['file_name'];
-
-                $this->db->trans_start();  //DB Transaction Handle START
-                $this->db->where('user_id',$user_id);
-                $this->db->set('revision', 'revision+1', FALSE);
-                $this->db->update($this->config->item('table_setup_user_info'));
-
-
-                Query_helper::add($this->config->item('table_setup_user_info'),$data_user_info);
-                $this->db->trans_complete();   //DB Transaction Handle END
-                if ($this->db->trans_status() === TRUE)
+                if($uploaded_image['image_profile']['status'])
                 {
+                    $data_user_info=Query_helper::get_info($this->config->item('table_setup_user_info'),array('*'),array('user_id ='.$user_id,'revision =1'),1);
+                    unset($data_user_info['id']);
+                    $data_user_info['user_created'] = $user->user_id;
+                    $data_user_info['date_created'] = $time;
+                    $data_user_info['revision'] = 1;
+                    $data_user_info['picture_profile']=base_url()."images/profiles/".$user_id.'/'.$uploaded_image['image_profile']['info']['file_name'];
 
-                    $this->message=$this->lang->line("MSG_SAVED_SUCCESS");
-                    $this->system_edit();
+                    $this->db->trans_start();  //DB Transaction Handle START
+                    $this->db->where('user_id',$user_id);
+                    $this->db->set('revision', 'revision+1', FALSE);
+                    $this->db->update($this->config->item('table_setup_user_info'));
+
+
+                    Query_helper::add($this->config->item('table_setup_user_info'),$data_user_info);
+                    $this->db->trans_complete();   //DB Transaction Handle END
+                    if ($this->db->trans_status() === TRUE)
+                    {
+
+                        $this->message=$this->lang->line("MSG_SAVED_SUCCESS");
+                        $this->system_edit();
+                    }
+                    else
+                    {
+                        $ajax['status']=false;
+                        $ajax['system_message']=$this->lang->line("MSG_SAVED_FAIL");
+                        $this->jsonReturn($ajax);
+                    }
                 }
                 else
                 {
                     $ajax['status']=false;
-                    $ajax['system_message']=$this->lang->line("MSG_SAVED_FAIL");
+                    $ajax['system_message']=$uploaded_image['image_profile']['message'];
                     $this->jsonReturn($ajax);
                 }
             }
