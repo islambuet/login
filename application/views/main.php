@@ -48,6 +48,7 @@ $CI = & get_instance();
             var display_date_format = "dd-M-yy";
             var SELCET_ONE_ITEM = "<?php echo $CI->lang->line('SELECT_ONE_ITEM'); ?>";
             var DELETE_CONFIRM = "<?php echo $CI->lang->line('DELETE_CONFIRM'); ?>";
+            var system_resized_image_files=[];
         </script>
         <header class="hidden-print">
 
