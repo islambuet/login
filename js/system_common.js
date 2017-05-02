@@ -345,6 +345,21 @@ $(document).ready(function()
             console.log('no file attached');
         }
     });
+    $(document).on("click", ".system_jqx_column", function(event)
+    {
+        var jqx_grid_id='#system_jqx_container';
+        $(jqx_grid_id).jqxGrid('beginupdate');
+        if($(this).is(':checked'))
+        {
+            $(jqx_grid_id).jqxGrid('showcolumn', $(this).val());
+        }
+        else
+        {
+            $(jqx_grid_id).jqxGrid('hidecolumn', $(this).val());
+        }
+        $(jqx_grid_id).jqxGrid('endupdate');
+
+    });
 });
 function load_current_content()
 {

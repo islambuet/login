@@ -79,6 +79,7 @@ class Setup_users_info extends Root_Controller
             );
             $data["user_info"] = Array(
                 'name' => '',
+                'email' => '',
                 'office_id' => '',
                 'designation' => '',
                 'department_id' => '',
@@ -310,6 +311,7 @@ class Setup_users_info extends Root_Controller
         $id = $this->input->post("id");
         $this->load->library('form_validation');
         $this->form_validation->set_rules('user_info[name]',$this->lang->line('LABEL_NAME'),'required');
+        $this->form_validation->set_rules('user_info[email]',$this->lang->line('LABEL_EMAIL'),'required');
         if($id==0)
         {
             $this->form_validation->set_rules('user[user_name]',$this->lang->line('LABEL_USERNAME'),'required');
@@ -341,7 +343,7 @@ class Setup_users_info extends Root_Controller
 
         $this->db->from($this->config->item('table_setup_user').' user');
         $this->db->select('user.id,user.employee_id,user.user_name,user.status');
-        $this->db->select('user_info.name,user_info.ordering,user_info.blood_group,user_info.mobile_no');
+        $this->db->select('user_info.name,user_info.email,user_info.ordering,user_info.blood_group,user_info.mobile_no');
         $this->db->select('ug.name group_name');
         $this->db->select('designation.name designation_name');
         $this->db->select('department.name department_name');

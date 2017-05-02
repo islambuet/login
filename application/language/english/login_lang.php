@@ -55,6 +55,7 @@ $lang['LABEL_NO'] = 'No';
 
 $lang['LABEL_YEAR'] = 'Year';
 $lang['LABEL_NAME'] = 'Name';
+$lang['LABEL_EMAIL'] = 'Email Address';
 $lang['LABEL_ORDER'] = 'Ordering';
 $lang['LABEL_REMARKS'] = 'Remarks';
 $lang['SELECT_ONE_ITEM'] = 'Select an item';

@@ -185,6 +185,14 @@
                         </div>
                         <div class="row show-grid">
                             <div class="col-xs-4">
+                                <label class="control-label pull-right"><?php echo $CI->lang->line('LABEL_EMAIL');?><span style="color:#FF0000">*</span></label>
+                            </div>
+                            <div class="col-sm-4 col-xs-8">
+                                <input type="text" name="user_info[email]" class="form-control" value="<?php echo $user_info['email'];?>"/>
+                            </div>
+                        </div>
+                        <div class="row show-grid">
+                            <div class="col-xs-4">
                                 <label class="control-label pull-right"><?php echo $CI->lang->line('LABEL_FATHER_NAME');?></label>
                             </div>
                             <div class="col-sm-4 col-xs-8">
