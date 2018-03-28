@@ -345,6 +345,28 @@ $(document).ready(function()
             console.log('no file attached');
         }
     });
+    $(document).on("click", "#button_action_csv", function(event)
+    {
+        //previous csv file
+        /*var jqxgrid_id='#system_jqx_container';
+         $(jqxgrid_id).jqxGrid('exportdata', 'csv', $(this).attr('data-title'));*/
+        var jqxgrid_id='#system_jqx_container';
+
+        var gridContent = $(jqxgrid_id).jqxGrid('exportdata', 'html');
+        var newWindow = window.open('', '', 'width=800, height=500,menubar=yes,toolbar=no,scrollbars=yes'),
+            document = newWindow.document.open(),
+            pageContent =
+                '<!DOCTYPE html>\n' +
+                    '<html>\n' +
+                    '<head>\n' +
+                    '<meta charset="utf-8" />\n' +
+                    '<title>'+$(this).attr('data-title')+'</title>\n' +
+                    '</head>\n' +
+                    '<body>\n' + gridContent + '\n</body>\n</html>';
+        document.write(pageContent);
+        document.close();
+
+    })
     $(document).on("click", ".system_jqx_column", function(event)
     {
         var jqx_grid_id='#system_jqx_container';
